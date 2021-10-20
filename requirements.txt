@@ -1,0 +1,4 @@
+py-cord
+datetime
+python_dotenv
+requests
