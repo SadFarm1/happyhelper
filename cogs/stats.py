@@ -49,24 +49,29 @@ class Stats(commands.Cog):
             media_count['Audiobooks'] = int(result[library_names.index("Audiobooks")]['parent_count'])
 
 
-            library_names.remove("Movies  (4K)")
-            library_names.remove("TV Shows  (4K)")
-            library_names.remove("Movies")
-            library_names.remove("TV Shows")
-            library_names.remove("Movies  (Kids)")
-            library_names.remove("TV Shows  (Kids)")
-            library_names.remove("Audiobooks")
+            library_names[library_names.index("Movies  (4K)")] = ""
+            library_names[library_names.index("TV Shows  (4K)")] = ""
+            library_names[library_names.index("Movies")] = ""
+            library_names[library_names.index("TV Shows")] = ""
+            library_names[library_names.index("Movies  (Kids)")] = ""
+            library_names[library_names.index("TV Shows  (Kids)")] = ""
+            library_names[library_names.index("Audiobooks")] = ""
 
 
-            for libary in library_names:
-                if 'anime' in str(libary).lower():
-                    media_count['Anime'] += int(result[library_names.index(libary)]['count'])
+            for library in library_names:
+                if 'anime' in str(library).lower():
+                    media_count['Anime'] += int(result[library_names.index(library)]['count'])
+                    library_names[library_names.index(library)] = ""
 
-                if 'TV Shows (' in str(libary):
-                    media_count['Foreign TV Shows'] += int(result[library_names.index(libary)]['count'])
+            for library in library_names:
+                if 'TV Shows (' in str(library):
+                    media_count['Foreign TV Shows'] += int(result[library_names.index(library)]['count'])
+                    library_names[library_names.index(library)] = ""
 
-                if 'Movies (' in str(libary):
-                    media_count['Foreign Movies'] += int(result[library_names.index(libary)]['count'])
+            for library in library_names:
+                if 'Movies (' in str(library):
+                    media_count['Foreign Movies'] += int(result[library_names.index(library)]['count'])
+                    library_names[library_names.index(library)] = ""
 
     
             channel_ids = {
