@@ -30,7 +30,7 @@ class Tickets(commands.Cog):
         now = datetime.datetime.today()
         hour = int(now.strftime('%H'))
 
-        if('support' in str(channel)):
+        if(True):
             embed = discord.Embed(
                     title = "Support Alert",
                     description = "**Holiday Response Times May Be Delayed More Than Normal!** \n\nThank you for opening a ticket! You have reached us after our regular business hours. Response times may be impacted. Please try our self service commands and/or leave a detailed message so we can assist you as soon as possible!\n\n Thank you!\n*Expect a response at around 7 AM (PST)*",

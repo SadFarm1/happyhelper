@@ -100,7 +100,7 @@ class Stats(commands.Cog):
                 
                 
 
-
+    
 
             
             
