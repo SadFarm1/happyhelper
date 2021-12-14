@@ -32,7 +32,7 @@ class Stats(commands.Cog):
                 'Audiobooks': 0,
                 'Foreign TV Shows' :0,
                 'Foreign Movies' :0,
-
+                'Concerts' :0,
             }
 
             library_names = [library['section_name'] for library in result]
@@ -47,6 +47,7 @@ class Stats(commands.Cog):
             media_count['Kids TV Shows'] = int(result[library_names.index("TV Shows  (Kids)")]
             ['count'])
             media_count['Audiobooks'] = int(result[library_names.index("Audiobooks")]['parent_count'])
+            media_count['Concerts'] = int(result[library_names.index("Concerts")]['count'])
 
 
             library_names[library_names.index("Movies  (4K)")] = ""
@@ -85,6 +86,7 @@ class Stats(commands.Cog):
                 'Audiobooks': 780144440731107349,
                 'Foreign Movies': 850161942177251378,
                 'Foreign TV Shows': 850161884254830603,
+                'Concerts': 920444793501388840
             }
 
 
