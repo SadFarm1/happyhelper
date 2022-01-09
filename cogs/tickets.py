@@ -6,17 +6,18 @@ import time
 class Tickets(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.auto_response = True
 
     
-    auto_response = True
+    
     @commands.command()
     async def toggleresponse(self, ctx):
-        global auto_response
-        if auto_response:
-            auto_response = False
+        
+        if self.auto_response:
+            self.auto_response = False
             await ctx.send('Auto Response Deactivated')
         else:
-            auto_response = True
+            self.auto_response = True
             await ctx.send('Auto Response Activated')
 
 
@@ -32,7 +33,7 @@ class Tickets(commands.Cog):
 
 
 
-        if int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0 and auto_response:
+        if int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0 and self.auto_response:
 
 
             if ('presales' in str(channel)):
