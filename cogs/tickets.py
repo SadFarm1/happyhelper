@@ -30,17 +30,9 @@ class Tickets(commands.Cog):
         now = datetime.datetime.today()
         hour = int(now.strftime('%H'))
 
-        if(True):
-            embed = discord.Embed(
-                    title = "Support Alert",
-                    description = "**Holiday Response Times May Be Delayed More Than Normal!** \n\nThank you for opening a ticket! You have reached us after our regular business hours. Response times may be impacted. Please try our self service commands and/or leave a detailed message so we can assist you as soon as possible!\n\n Thank you!\n*Expect a response at around 7 AM (PST)*",
-                    color = 0x004c8b
-                )
-            await channel.send(embed=embed)
 
 
-
-        elif int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0 and auto_response:
+        if int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0 and auto_response:
 
 
             if ('presales' in str(channel)):
