@@ -6,21 +6,11 @@ import time
 class Tickets(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.auto_response = True
-
-    
-    
-    @commands.command()
-    async def toggleresponse(self, ctx):
         
-        if self.auto_response:
-            self.auto_response = False
-            await ctx.send('Auto Response Deactivated')
-        else:
-            self.auto_response = True
-            await ctx.send('Auto Response Activated')
 
-
+    
+    
+    
     @commands.Cog.listener()
     async def on_guild_channel_create(self, channel):
 
@@ -33,7 +23,7 @@ class Tickets(commands.Cog):
 
 
 
-        if int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0 and self.auto_response:
+        if int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0:
 
 
             if ('presales' in str(channel)):
@@ -54,7 +44,7 @@ class Tickets(commands.Cog):
                 )
                 await channel.send(embed=embed)"""
         
-        elif int(day) == 6 or int(day) == 0 and auto_response:
+        elif int(day) == 6 or int(day) == 0 :
 
             if ('presales' in str(channel)):
 
