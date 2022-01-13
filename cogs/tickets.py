@@ -35,14 +35,14 @@ class Tickets(commands.Cog):
                 )
                 await channel.send(embed=embed)
 
-            """elif ('support' in str(channel)):
+            elif ('support' in str(channel)):
                 
                 embed = discord.Embed(
                     title = "Support Alert",
                     description = "Thank you for opening a ticket! You have reached us after our regular business hours. Response times may be impacted. Please try our self service commands and/or leave a detailed message so we can assist you as soon as possible! \n\nThank you! \nExpect a response at around 7 AM (PST)",
                     color = 0x004c8b
                 )
-                await channel.send(embed=embed)"""
+                await channel.send(embed=embed)
         
         elif int(day) == 6 or int(day) == 0 :
 
