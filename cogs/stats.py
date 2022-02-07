@@ -39,30 +39,32 @@ class Stats(commands.Cog):
 
 
 
-            media_count['4K Movies'] = int(result[library_names.index("Movies  (4K)")]['count'])
-            media_count['4K TV Shows'] = int(result[library_names.index("TV Shows  (4K)")]['count'])
+            media_count['4K Movies'] = int(result[library_names.index(" 4K Movies")]['count'])
+            media_count['4K TV Shows'] = int(result[library_names.index("4K TV Shows")]['count'])
             media_count['Movies'] = int(result[library_names.index("Movies")]['count'])
             media_count['TV'] = int(result[library_names.index("TV Shows")]['count'])
-            media_count['Kids Movies'] = int(result[library_names.index("Movies  (Kids)")]['count'])
-            media_count['Kids TV Shows'] = int(result[library_names.index("TV Shows  (Kids)")]
+            media_count['Kids Movies'] = int(result[library_names.index("Kids Movies")]['count'])
+            media_count['Kids TV Shows'] = int(result[library_names.index("Kids TV Shows")]
             ['count'])
             media_count['Audiobooks'] = int(result[library_names.index("Audiobooks")]['parent_count'])
             media_count['Concerts'] = int(result[library_names.index("Concerts")]['count'])
+            media_count['Foreign Movies'] = int(result[library_names.index("Movies (Foreign)")]['count'])
+            media_count['Foreign TV Shows'] = int(result[library_names.index("TV Shows (Foreign)")]['count'])
 
 
-            library_names[library_names.index("Movies  (4K)")] = ""
-            library_names[library_names.index("TV Shows  (4K)")] = ""
+            library_names[library_names.index(" 4K Movies")] = ""
+            library_names[library_names.index("4K TV Shows")] = ""
             library_names[library_names.index("Movies")] = ""
             library_names[library_names.index("TV Shows")] = ""
-            library_names[library_names.index("Movies  (Kids)")] = ""
-            library_names[library_names.index("TV Shows  (Kids)")] = ""
+            library_names[library_names.index("Kids Movies")] = ""
+            library_names[library_names.index("Kids TV Shows")] = ""
             library_names[library_names.index("Audiobooks")] = ""
-
 
             for library in library_names:
                 if 'anime' in str(library).lower():
                     media_count['Anime'] += int(result[library_names.index(library)]['count'])
                     library_names[library_names.index(library)] = ""
+            """ 
 
             for library in library_names:
                 if 'TV Shows (' in str(library):
@@ -73,7 +75,7 @@ class Stats(commands.Cog):
                 if 'Movies (' in str(library):
                     media_count['Foreign Movies'] += int(result[library_names.index(library)]['count'])
                     library_names[library_names.index(library)] = ""
-
+            """ 
     
             channel_ids = {
                 '4K Movies': 780144070369738752,
