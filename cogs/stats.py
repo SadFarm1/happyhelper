@@ -16,7 +16,7 @@ class Stats(commands.Cog):
         try:
             
 
-            r = requests.get('http://95.216.241.36:24833/api/v2?apikey=180263823b594706a4979f826aa10252&cmd=get_libraries')
+            r = requests.get('http://95.216.241.36:24901/api/v2?apikey=134f2bfc05e84f4ba3f556a992933be9&cmd=get_libraries')
             result = r.json()
             result = result['response']['data']
             
