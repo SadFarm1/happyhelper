@@ -23,8 +23,15 @@ class Tickets(commands.Cog):
 
 
 
-        if int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0:
-
+        #if int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0:
+        if True:
+            embed = discord.Embed(
+                    title = "Ticket Alert",
+                    description = "Welcome, Due to higher than normal inquires our response times are drastically delayed while we work through the tickets, thanks for your patience and understanding!",
+                    color = 0x004c8b
+                )
+                await channel.send(embed=embed)
+        else:
 
             if ('presales' in str(channel)):
 
