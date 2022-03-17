@@ -23,7 +23,7 @@ class Tickets(commands.Cog):
 
 
 
-        if int(hour) <= 12 or int(hour) >= 23 and int(day) != 6 and int(day) != 0:
+        if int(hour) <= 15 or int(hour) >= 23 and int(day) != 6 and int(day) != 0:
             if ('presales' in str(channel)):
 
                 embed = discord.Embed(
