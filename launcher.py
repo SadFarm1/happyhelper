@@ -52,7 +52,7 @@ async def unload(ctx, extension):
 async def reload(ctx, extension):
     if(check_cog(extension)):
         wait_msg = await ctx.send(f'Reloading module: "{extension}"')
-        url = f'http://209.141.54.217:3000/SadFarm/HappyHelper/raw/branch/master/cogs/{extension}.py'
+        url = f'https://raw.githubusercontent.com/SadFarm1/happyhelper/master/cogs/{extension}.py'
         r = requests.get(url)
     
         if(r.content != b'Not found.\n'):
@@ -69,7 +69,7 @@ async def reload(ctx, extension):
 @commands.is_owner()
 async def download(ctx, extension):
     wait_msg = await ctx.send(f'Downloading module: "{extension}"')
-    url = f'http://209.141.54.217:3000/SadFarm/HappyHelper/raw/branch/master/cogs/{extension}.py'
+    url = f'https://raw.githubusercontent.com/SadFarm1/happyhelper/master/cogs/{extension}.py'
     r = requests.get(url)
     
     if(r.content != b'Not found.\n'):
