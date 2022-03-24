@@ -16,6 +16,8 @@ async def on_ready():
     print('Done loading cogs')
     print('------')
 
+    check_msg_file()
+
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
@@ -89,5 +91,13 @@ def load_cogs():
     for filename in os.listdir('./cogs'):
         if filename.endswith('.py'):
             bot.load_extension(f'cogs.{filename[:-3]}')
+
+def check_msg_file():
+    if not os.path.exists('messages.json'):
+        os.close(os.open("file.txt", os.O_CREAT))
+        f =  open('messages.json', 'w')
+        f.write('{"presales": [], "support": []}')
+        f.close()
+        
 
 bot.run(os.getenv('DISCORD_KEY'))
