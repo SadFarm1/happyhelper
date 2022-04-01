@@ -52,7 +52,7 @@ class Stats(commands.Cog):
             media_count['Foreign TV Shows'] = int(result[library_names.index("TV Shows (Foreign)")]['count'])
 
 
-            library_names[library_names.index(" 4K Movies")] = ""
+            library_names[library_names.index("4K Movies")] = ""
             library_names[library_names.index("4K TV Shows")] = ""
             library_names[library_names.index("Movies")] = ""
             library_names[library_names.index("TV Shows")] = ""
