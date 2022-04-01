@@ -39,7 +39,7 @@ class Stats(commands.Cog):
 
 
 
-            media_count['4K Movies'] = int(result[library_names.index(" 4K Movies")]['count'])
+            media_count['4K Movies'] = int(result[library_names.index("4K Movies")]['count'])
             media_count['4K TV Shows'] = int(result[library_names.index("4K TV Shows")]['count'])
             media_count['Movies'] = int(result[library_names.index("Movies")]['count'])
             media_count['TV'] = int(result[library_names.index("TV Shows")]['count'])
